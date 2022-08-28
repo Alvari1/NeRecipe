@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/image_from_gallery"
+        android:title="@string/menu_image_from_gallery" />
+    <item
+        android:id="@+id/image_from_url"
+        android:title="@string/menu_image_from_url" />
+    <item
+        android:id="@+id/image_from_camera"
+        android:title="@string/menu_image_from_camera" />
+    <item
+        android:id="@+id/rotate_image"
+        android:title="@string/menu_rotate_image" />
+    <item
+        android:id="@+id/delete_image"
+        android:title="@string/menu_delete_image" />
+</menu>

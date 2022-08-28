@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_spacing">16dp</dimen>
+    <dimen name="double_spacing">32dp</dimen>
+    <dimen name="small_spacing">8dp</dimen>
+    <dimen name="recipe_name_text_size">20sp</dimen>
+    <dimen name="recipe_image_height_size">194dp</dimen>
+    <dimen name="step_image_height_size">194dp</dimen>
+    <dimen name="empty_state_text_size">20sp</dimen>
+    <dimen name="material_count_button_size">80dp</dimen>
+    <dimen name="material_count_checkbox_size">60dp</dimen>
+    <dimen name="material_step_count_size">20dp</dimen>
+    <dimen name="common_elevation">4dp</dimen>
+</resources>

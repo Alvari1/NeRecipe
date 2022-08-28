@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeRecipe</string>
+
+    <string name="bottom_menu_recipes">Рецепты</string>
+    <string name="bottom_menu_favorites">Избранное</string>
+    <string name="bottom_menu_filters">Фильтры</string>
+
+    <string name="actionbar_title_recipes">Рецепты</string>
+    <string name="actionbar_title_favorites">Избранное</string>
+    <string name="actionbar_title_filters">Фильтры</string>
+    <string name="actionbar_title_recipe">Рецепт</string>
+
+    <string name="recipe_name_text">Название рецепта</string>
+    <string name="recipe_author_name_text">Автор</string>
+    <string name="empty_image_description">Изображение блюда</string>
+    <string name="recipes_search_hint_text">Найти рецепт</string>
+    <string name="add_recipe_button_description">Добавить рецепт</string>
+    <string name="clear_cuisine_filter_description">Clear cuisine filter</string>
+    <string name="empty_state_text">\nСписок рецептов пуст.\nДобавьте рецепт и он появится тут.\n(…и проверьте фильтры)</string>
+    <string name="empty_favorites_state_text">\nСписок понравившихся рецептов пуст.\nЛайкните рецепт и он появится тут.</string>
+    <string name="empty_filters_state_text">\nСписок категорий пуст!</string>
+    <string name="likes_description">Лайки</string>
+    <string name="shares_description">Связи</string>
+    <string name="views_description">Просмотры</string>
+    <string name="options_description">Опции</string>
+
+    <string name="feed_loading">Загрузка…</string>
+
+    <string name="menu_delete">Удалить</string>
+    <string name="menu_edit">Изменить</string>
+
+    <string name="share_intent_title">Поделиться</string>
+    <string name="share_intent_empty_text_error">Текст пустой</string>
+
+    <string name="recipe_title_hint">Название рецепта</string>
+    <string name="recipe_author_hint">Автор</string>
+    <string name="recipe_description_hint">Описание</string>
+    <string name="ok_fab_description">Сохранить</string>
+
+    <string name="edit_recipe_add_image_discription">Добавить картинку рецепта</string>
+    <string name="edit_step_add_image_discription">Добавить картинку шага</string>
+
+    <string name="mandatory_helper_text">*Обязательное поле</string>
+    <string name="optional_helper_text">Опционально</string>
+
+    <string name="scroll_up_description">Подняться в начало списка</string>
+
+    <string name="recipe_step">Шаг</string>
+    <string name="recipe_ingredient">Продукт</string>
+
+    <string name="add_fab_description">Добавить</string>
+    <string name="delete_fab_description">Удалить</string>
+
+    <string name="recipe_tab_title_detail">Детально</string>
+    <string name="recipe_tab_title_steps">Шаги</string>
+    <string name="recipe_tab_title_ingredients">Продукты</string>
+
+    <string name="app_menu_add">Добавить</string>
+    <string name="app_menu_edit">Редактировать</string>
+    <string name="app_menu_save">Сохранить</string>
+    <string name="app_menu_cancel">Отменить</string>
+    <string name="app_menu_delete">Удалить</string>
+
+    <string name="cuisines">Кухня (выберите из списка)</string>
+    <string name="cuisine_title">кухня</string>
+    <string name="cuisines_helper_text">необязательное поле</string>
+    <string name="all_cuisines">Все кухни</string>
+    <string name="cuisine_unknown">Неизвестная</string>
+    <string name="cuisine_european">Европейская</string>
+    <string name="cuisine_asian">Азиатская</string>
+    <string name="cuisine_panasian">Паназиатская</string>
+    <string name="cuisine_eastern">Восточная</string>
+    <string name="cuisine_american">Американская</string>
+    <string name="cuisine_russian">Русская</string>
+    <string name="cuisine_mediterranean">Средиземноморская</string>
+    <string name="last_cuisine_warning">Должна остаться хотя-бы одна кухня</string>
+    <string name="res_name_error">! имя не найдено %1$S !</string>
+
+    <string name="menu_image_from_gallery">Выбрать фото в Галерее</string>
+    <string name="menu_image_from_url">Взять картинку по URL</string>
+    <string name="menu_image_from_camera">Сделать снимок</string>
+    <string name="menu_delete_image">Удалить картинку</string>
+    <string name="menu_rotate_image">Повернуть картинку</string>
+
+    <string name="something_went_wrong">Что-то пошло не так…</string>
+    <string name="url_load">Скачать</string>
+    <string name="url_load_cancel">Отменить</string>
+
+    <string name="cant_delete_last_ingredient">Вы не можете удалить последний ингредиент.\nПомните, пустые ингредиенты не сохраняются.</string>
+    <string name="cant_delete_last_step">Вы не можете удалить последний шаг.\nОдин шаг обязательно должен быть.</string>
+
+    <string name="search_title">Поиск</string>
+    <string name="search_hint">Поиск по всем полям рецепта</string>
+    <string name="empty_search_content">Search text is empty</string>
+    <string name="author_unknown">Тот-Кого-Нельзя-Называть</string>
+
+    <string name="empty_steps">Нет шагов, нет проблем… делайте как велит сердце ;)</string>
+    <string name="empty_ingredients">Нет ингредиентов, нет проблем… используй то, что велит сердце ;)</string>
+
+    <string name="save_conditions_violated">Должны быть название рецепта, его автор и описание хотя бы одного шага.</string>
+
+    <string name="exit_application_title">Выйти из приложения?</string>
+    <string name="exit_application_prompt">Нажмите Да для выхода!</string>
+    <string name="delete_recipe_title">Удалить рецепт?</string>
+    <string name="delete_recipe_prompt">Нажмите Да для удаления!</string>
+    <string name="cancel_recipe_title">Вы точно хотите отменить?</string>
+    <string name="cancel_recipe_prompt">Нажмите Да для выхода!</string>
+    <string name="option_yes">Да</string>
+    <string name="option_no">Нет</string>
+
+    <string name="recipe_saving">Сохранение рецепта…</string>
+    <string name="recipe_saved">Рецепт сохранен</string>
+
+    <string name="recipe_share_recipe_text">Рецепт</string>
+    <string name="recipe_share_title_text">Название</string>
+    <string name="recipe_share_author_text">Автор</string>
+    <string name="recipe_share_description_text">Описание</string>
+    <string name="recipe_share_steps_text">Шаги</string>
+    <string name="recipe_share_ingredients_text">Продукты</string>
+</resources>

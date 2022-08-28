@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:id="@+id/stepContainer">
+
+    <ImageView
+        android:id="@+id/stepImageLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/empty_image_description"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/recipeStepViewCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_spacing"
+            app:cardElevation="@dimen/common_elevation"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/recipeStepImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/step_image_height_size"
+                    android:contentDescription="@string/empty_image_description"
+                    android:visibility="visible"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_spacing">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/recipeStepPos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:maxLines="1"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/recipeStep"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:layout_marginStart="@dimen/common_spacing"
+                            android:autoSizeTextType="uniform"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/recipeStepPos" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/recipeStepEditCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/small_spacing"
+            app:cardElevation="@dimen/common_elevation"
+            android:visibility="gone"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/editStepImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/step_image_height_size"
+                    android:contentDescription="@string/edit_step_add_image_discription"
+                    android:visibility="visible"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_add_a_photo_white_48"
+                    android:background="@color/common_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_spacing"
+                    android:clipToPadding="false"
+                    android:clipChildren="false">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:clipChildren="false">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/recipeStepEditPos"
+                            android:layout_width="@dimen/material_step_count_size"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/common_color"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/recipeStepEdit"
+                            tools:text="1" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/recipeStepEdit"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_spacing"
+                            android:layout_marginEnd="@dimen/common_spacing"
+                            android:layout_marginStart="@dimen/small_spacing"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/recipe_step"
+                            android:inputType="textMultiLine"
+                            app:endIconMode="clear_text"
+                            app:errorEnabled="false"
+                            app:helperText="@string/mandatory_helper_text"
+                            app:helperTextEnabled="true"
+                            app:layout_constraintEnd_toStartOf="@id/stepActionButton"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/recipeStepEditPos"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/recipe_step">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTitle_field"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/stepActionButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/delete_fab_description"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/recipeStepEdit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/recipeStepEdit"
+                            app:layout_constraintTop_toTopOf="@+id/recipeStepEdit"
+                            app:srcCompat="@drawable/ic_delete_like_bin_24dp"
+                            android:clipToPadding="false"
+                            android:clipChildren="false" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/recipeStepEmptyCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_spacing"
+            app:cardElevation="@dimen/common_elevation"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/recipeStepEmptyImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/step_image_height_size"
+                    android:contentDescription="@string/empty_image_description"
+                    android:visibility="visible"
+                    android:scaleType="fitCenter"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:srcCompat="@drawable/recipe_image" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="@dimen/common_spacing">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:padding="@dimen/common_spacing">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/recipeStepEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="@string/empty_steps"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

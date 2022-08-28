@@ -1,0 +1,40 @@
+<!-- sample_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_search"
+        android:title="@string/search_title"
+        android:icon="@drawable/ic_search_24dp"
+        app:showAsAction="always"
+        android:visible="false"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item
+        android:id="@+id/action_save"
+        android:icon="@drawable/ic_ok_24dp"
+        android:title="@string/app_menu_save"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/ic_edit_24dp"
+        android:title="@string/app_menu_edit"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_add_24dp"
+        android:title="@string/app_menu_add"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@drawable/ic_cancel_24dp"
+        android:title="@string/app_menu_cancel"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_delete_like_bin_24dp"
+        android:title="@string/app_menu_delete"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

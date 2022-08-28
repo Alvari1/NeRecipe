@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">NeRecipe</string>
+    <string name="bottom_menu_recipes">Recipes</string>
+    <string name="bottom_menu_favorites">Favorites</string>
+    <string name="bottom_menu_filters">Filter</string>
+
+    <string name="actionbar_title_recipes">Recipes</string>
+    <string name="actionbar_title_favorites">Favorites</string>
+    <string name="actionbar_title_filters">Filter</string>
+    <string name="actionbar_title_recipe">Recipe</string>
+
+    <string name="recipe_name_text">Recipe name</string>
+    <string name="recipe_author_name_text">Author name</string>
+    <string name="empty_image_description">Recipe image</string>
+    <string name="recipes_search_hint_text">Search recipe</string>
+    <string name="clear_cuisine_filter_description">Clear cuisine filter</string>
+    <string name="add_recipe_button_description">Add recipe</string>
+    <string name="empty_state_text">\nThe Recipes list is Empty!\nAdd a recipe and it will show up here.\n(…and check filters)</string>
+    <string name="empty_favorites_state_text">\nThe Favorites list is Empty!\nLike a recipe and it will show up here.</string>
+    <string name="empty_filters_state_text">\nThe Filters list is Empty!</string>
+    <string name="likes_description">Likes</string>
+    <string name="shares_description">Shares</string>
+    <string name="views_description">Views</string>
+    <string name="options_description">Options</string>
+
+    <string name="feed_loading">Loading…</string>
+
+    <string name="menu_delete">Delete</string>
+    <string name="menu_edit">Edit</string>
+
+    <string name="share_intent_title">Share</string>
+    <string name="share_intent_empty_text_error">This text is blank</string>
+
+    <string name="recipe_title_hint">Title</string>
+    <string name="recipe_author_hint">Author</string>
+    <string name="recipe_description_hint">Description</string>
+    <string name="ok_fab_description">Save</string>
+
+    <string name="edit_recipe_add_image_discription">Add recipe image</string>
+    <string name="edit_step_add_image_discription">Add step image</string>
+
+    <string name="mandatory_helper_text">*Required</string>
+    <string name="optional_helper_text">Optional</string>
+
+    <string name="scroll_up_description">Scroll up</string>
+
+    <string name="recipe_step">Step</string>
+    <string name="recipe_ingredient">Product</string>
+
+    <string name="add_fab_description">Add</string>
+    <string name="delete_fab_description">Delete</string>
+
+    <string name="recipe_tab_title_detail">Detail</string>
+    <string name="recipe_tab_title_steps">Steps</string>
+    <string name="recipe_tab_title_ingredients">Products</string>
+
+    <string name="app_menu_add">Add</string>
+    <string name="app_menu_edit">Edit</string>
+    <string name="app_menu_save">Save</string>
+    <string name="app_menu_cancel">Cancel</string>
+    <string name="app_menu_delete">Delete</string>
+
+    <string name="cuisines">Cuisine (choose from list)</string>
+    <string name="cuisine_title">cuisine</string>
+    <string name="cuisines_helper_text">optional</string>
+    <string name="all_cuisines">All cuisines</string>
+    <string name="cuisine_unknown">Unknown</string>
+    <string name="cuisine_european">European</string>
+    <string name="cuisine_asian">Asian</string>
+    <string name="cuisine_panasian">Pan-Asian</string>
+    <string name="cuisine_eastern">Eastern</string>
+    <string name="cuisine_american">American</string>
+    <string name="cuisine_russian">Russian</string>
+    <string name="cuisine_mediterranean">Mediterranean</string>
+    <string name="last_cuisine_warning">One cuisine must remain</string>
+    <string name="res_name_error">! %1$S codename error !</string>
+
+    <string name="menu_image_from_gallery">Choose a photo from Gallery</string>
+    <string name="menu_image_from_url">Get image from URL</string>
+    <string name="menu_image_from_camera">Take a shot</string>
+    <string name="menu_delete_image">Delete image</string>
+    <string name="menu_rotate_image">Rotate image</string>
+
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="url_load">Load</string>
+    <string name="url_load_cancel">Cancel</string>
+    <string name="cant_delete_last_ingredient">You can\'t delete last ingredient.\nKeep in mind that empty ingredients are not saved.</string>
+    <string name="cant_delete_last_step">You can\'t delete last step.\nAt least one step must exist.</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search all recipe text fields</string>
+    <string name="empty_search_content">Search text is empty</string>
+    <string name="author_unknown">He-Who-Must-Not-Be-Named</string>
+
+    <string name="empty_steps">No steps, no problems.</string>
+    <string name="empty_ingredients">No ingredients, no problems.</string>
+    <string name="save_conditions_violated">There must be a title and an author for the recipe and at least a description of one step.</string>
+
+    <string name="exit_application_title">Exit Application?</string>
+    <string name="exit_application_prompt">Click yes to exit!</string>
+    <string name="delete_recipe_title">Delete recipe?</string>
+    <string name="delete_recipe_prompt">Click yes to delete!</string>
+    <string name="cancel_recipe_title">Sure you want to cancel?</string>
+    <string name="cancel_recipe_prompt">Click yes to exit!</string>
+    <string name="option_yes">Yes</string>
+    <string name="option_no">No</string>
+
+    <string name="recipe_saving">Saving recipe…</string>
+    <string name="recipe_saved">Recipe saved</string>
+
+    <string name="recipe_share_recipe_text">Recipe</string>
+    <string name="recipe_share_title_text">Title</string>
+    <string name="recipe_share_author_text">Author</string>
+    <string name="recipe_share_description_text">Description</string>
+    <string name="recipe_share_steps_text">Steps</string>
+    <string name="recipe_share_ingredients_text">Ingredients</string>
+</resources>
