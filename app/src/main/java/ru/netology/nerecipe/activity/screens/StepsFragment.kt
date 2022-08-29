@@ -29,7 +29,7 @@ class StepsFragment : Fragment() {
     private val viewModel: RecipeViewModel by activityViewModels()
 
     private lateinit var uri: Uri
-    
+
     private val simpleCallback =
         object :
             ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP.or(ItemTouchHelper.DOWN), 0) {
@@ -111,23 +111,23 @@ class StepsFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(binding.stepsRecyclerView)
 
         if (!binding.stepsRecyclerView.canScrollVertically(-1))
-            binding.stepScrollUpButton.visibility = View.GONE
+            binding.stepScrollUpButton.hide()
         else
-            binding.stepScrollUpButton.visibility = View.VISIBLE
+            binding.stepScrollUpButton.show()
 
         binding.stepsRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
                 if (!recyclerView.canScrollVertically(-1))
-                    binding.stepScrollUpButton.visibility = View.GONE
+                    binding.stepScrollUpButton.hide()
                 else
-                    binding.stepScrollUpButton.visibility = View.VISIBLE
+                    binding.stepScrollUpButton.show()
             }
         })
 
         binding.stepScrollUpButton.setOnClickListener {
-            binding.stepScrollUpButton.visibility = View.GONE
+            binding.stepScrollUpButton.hide()
             binding.stepsRecyclerView.smoothScrollToPosition(0)
         }
 

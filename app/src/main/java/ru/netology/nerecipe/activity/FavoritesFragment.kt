@@ -51,18 +51,18 @@ class FavoritesFragment : Fragment() {
         }
 
         if (!binding.recipesFavoritesList.canScrollVertically(-1))
-            binding.scrollUpButton.visibility = View.GONE
+            binding.scrollUpButton.hide()
         else
-            binding.scrollUpButton.visibility = View.VISIBLE
+            binding.scrollUpButton.show()
 
         binding.recipesFavoritesList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
                 if (!recyclerView.canScrollVertically(-1))
-                    binding.scrollUpButton.visibility = View.GONE
+                    binding.scrollUpButton.hide()
                 else
-                    binding.scrollUpButton.visibility = View.VISIBLE
+                    binding.scrollUpButton.show()
             }
 
 //            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -78,7 +78,7 @@ class FavoritesFragment : Fragment() {
         binding.scrollUpButton.setOnClickListener {
             binding.recipesFavoritesList.scrollToPosition(0)
             //binding.recipesList.smoothScrollToPosition(0)
-            binding.scrollUpButton.visibility = View.GONE
+            binding.scrollUpButton.hide()
         }
 
         viewModel.navigateRecipeShare.observe(viewLifecycleOwner) { recipe ->
@@ -100,8 +100,8 @@ class FavoritesFragment : Fragment() {
         }
 
         viewModel.navigateCuisineFilterUpdate.observe(viewLifecycleOwner) {
-            if (it) binding.clearCuisineFilterButton.visibility = View.VISIBLE
-            else binding.clearCuisineFilterButton.visibility = View.GONE
+            if (it) binding.clearCuisineFilterButton.show()
+            else binding.clearCuisineFilterButton.hide()
         }
 
         binding.clearCuisineFilterButton.setOnClickListener {

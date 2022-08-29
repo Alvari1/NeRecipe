@@ -60,9 +60,9 @@ class IngredientsFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(binding.ingredientsRecyclerView)
 
         if (!binding.ingredientsRecyclerView.canScrollVertically(-1))
-            binding.ingredientScrollUpButton.visibility = View.GONE
+            binding.ingredientScrollUpButton.hide()
         else
-            binding.ingredientScrollUpButton.visibility = View.VISIBLE
+            binding.ingredientScrollUpButton.show()
 
         binding.ingredientsRecyclerView.addOnScrollListener(object :
             RecyclerView.OnScrollListener() {
@@ -70,14 +70,14 @@ class IngredientsFragment : Fragment() {
                 super.onScrolled(recyclerView, dx, dy)
 
                 if (!recyclerView.canScrollVertically(-1))
-                    binding.ingredientScrollUpButton.visibility = View.GONE
+                    binding.ingredientScrollUpButton.hide()
                 else
-                    binding.ingredientScrollUpButton.visibility = View.VISIBLE
+                    binding.ingredientScrollUpButton.show()
             }
         })
 
         binding.ingredientScrollUpButton.setOnClickListener {
-            binding.ingredientScrollUpButton.visibility = View.GONE
+            binding.ingredientScrollUpButton.hide()
             binding.ingredientsRecyclerView.smoothScrollToPosition(0)
         }
 

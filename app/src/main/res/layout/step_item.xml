@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_spacing"
             app:cardElevation="@dimen/common_elevation"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:cardUseCompatPadding="true">
@@ -164,7 +164,7 @@
                                 android:layout_height="wrap_content" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/stepActionButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -174,7 +174,10 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/recipeStepEdit"
                             app:layout_constraintTop_toTopOf="@+id/recipeStepEdit"
-                            app:srcCompat="@drawable/ic_delete_like_bin_24dp"
+                            app:icon="@drawable/ic_delete_like_bin_24dp"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            app:backgroundTint="?android:attr/colorButtonNormal"
+                            android:layout_gravity="center"
                             android:clipToPadding="false"
                             android:clipChildren="false" />
                     </androidx.constraintlayout.widget.ConstraintLayout>

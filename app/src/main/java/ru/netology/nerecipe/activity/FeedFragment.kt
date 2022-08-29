@@ -108,8 +108,8 @@ class FeedFragment : Fragment() {
         }
 
         viewModel.navigateCuisineFilterUpdate.observe(viewLifecycleOwner) {
-            if (it) binding.clearCuisineFilterButton.visibility = View.VISIBLE
-            else binding.clearCuisineFilterButton.visibility = View.GONE
+            if (it) binding.clearCuisineFilterButton.show()
+            else binding.clearCuisineFilterButton.hide()
         }
 
         binding.clearCuisineFilterButton.setOnClickListener {
