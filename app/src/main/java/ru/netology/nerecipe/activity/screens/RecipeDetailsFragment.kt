@@ -1,25 +1,37 @@
 package ru.netology.nerecipe.activity.screens
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.launch
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import org.jetbrains.annotations.Nullable
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.adapter.RecipeAdapter
 import ru.netology.nerecipe.databinding.FragmentRecipeDetailsBinding
 import ru.netology.nerecipe.enums.ActionState
 import ru.netology.nerecipe.util.EMPTY_UUID
 import ru.netology.nerecipe.viewModel.RecipeViewModel
+import java.io.File
+
 
 class RecipeDetailsFragment : Fragment(), View.OnCreateContextMenuListener {
     private val viewModel: RecipeViewModel by activityViewModels()
+
+    private lateinit var uri: Uri
 
     var galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) {
         if (it != null) {
@@ -33,9 +45,25 @@ class RecipeDetailsFragment : Fragment(), View.OnCreateContextMenuListener {
     }
 
     var cameraLauncher =
-        registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
-            if (bitmap != null) {
-                viewModel.setCurrentRecipeImage(bitmap)
+        registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
+                try {
+                    Glide.with(requireContext())
+                        .asBitmap()
+                        .load(uri)
+                        .into(object : CustomTarget<Bitmap?>() {
+                            override fun onResourceReady(
+                                resource: Bitmap,
+                                transition: Transition<in Bitmap?>?
+                            ) {
+                                viewModel.setCurrentRecipeImage(resource)
+                                context?.contentResolver?.delete(uri, null, null)
+                            }
+
+                            override fun onLoadCleared(@Nullable placeholder: Drawable?) {}
+                        })
+                } catch (e: Exception) {
+                }
             }
         }
 
@@ -55,7 +83,7 @@ class RecipeDetailsFragment : Fragment(), View.OnCreateContextMenuListener {
         viewModel.editRecipe.observe(viewLifecycleOwner) { recipe ->
             if (recipe != null) {
                 adapter.submitList(listOf(recipe).toList())
-                
+
                 //setup appbar menus
                 if (viewModel.getActionState() == ActionState.PREVIEW)
                     viewModel.setRecipeAppBarState(isEdit = true, isDelete = true)
@@ -100,7 +128,19 @@ class RecipeDetailsFragment : Fragment(), View.OnCreateContextMenuListener {
         }
 
         viewModel.navigateRecipeGetImageFromCamera.observe(viewLifecycleOwner) {
-            cameraLauncher.launch()
+            val photoFile = File.createTempFile(
+                "IMG_",
+                ".jpg",
+                requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            )
+
+            uri = FileProvider.getUriForFile(
+                requireContext(),
+                "${requireContext().packageName}.provider",
+                photoFile
+            )
+
+            cameraLauncher.launch(uri)
         }
     }
 }

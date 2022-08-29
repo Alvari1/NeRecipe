@@ -3,7 +3,9 @@ package ru.netology.nerecipe.viewModel
 import android.app.Application
 import android.content.Context
 import android.graphics.Bitmap
+import android.os.Environment
 import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -30,6 +32,7 @@ import ru.netology.nerecipe.db.AppDb
 import ru.netology.nerecipe.dto.*
 import ru.netology.nerecipe.enums.ActionState
 import ru.netology.nerecipe.util.*
+import java.io.File
 import java.util.*
 
 class RecipeViewModel(application: Application) : AndroidViewModel(application),
@@ -38,6 +41,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
     private val repository: RecipeRepository = RecipeRepositoryDao(
         AppDb.getInstance(context = application).recipeDao()
     )
+
     val data = repository.getAll(getApplication())
     private val currentRecipe by repository::currentRecipe
     val editRecipe = MutableLiveData<Recipe>()

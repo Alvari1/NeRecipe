@@ -1,24 +1,35 @@
 package ru.netology.nerecipe.activity.screens
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.launch
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import org.jetbrains.annotations.Nullable
 import ru.netology.nerecipe.adapter.StepsAdapter
 import ru.netology.nerecipe.databinding.FragmentStepsBinding
 import ru.netology.nerecipe.viewModel.RecipeViewModel
+import java.io.File
 
 
 class StepsFragment : Fragment() {
     private val viewModel: RecipeViewModel by activityViewModels()
 
+    private lateinit var uri: Uri
+    
     private val simpleCallback =
         object :
             ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP.or(ItemTouchHelper.DOWN), 0) {
@@ -58,10 +69,26 @@ class StepsFragment : Fragment() {
         }
     }
 
-    private val cameraLauncher =
-        registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
-            if (bitmap != null) {
-                viewModel.setActiveStepImage(bitmap)
+    var cameraLauncher =
+        registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
+                try {
+                    Glide.with(requireContext())
+                        .asBitmap()
+                        .load(uri)
+                        .into(object : CustomTarget<Bitmap?>() {
+                            override fun onResourceReady(
+                                resource: Bitmap,
+                                transition: Transition<in Bitmap?>?
+                            ) {
+                                viewModel.setCurrentRecipeImage(resource)
+                                context?.contentResolver?.delete(uri, null, null)
+                            }
+
+                            override fun onLoadCleared(@Nullable placeholder: Drawable?) {}
+                        })
+                } catch (e: Exception) {
+                }
             }
         }
 
@@ -119,7 +146,19 @@ class StepsFragment : Fragment() {
         }
 
         viewModel.navigateStepGetImageFromCamera.observe(viewLifecycleOwner) {
-            cameraLauncher.launch()
+            val photoFile = File.createTempFile(
+                "IMG_",
+                ".jpg",
+                requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            )
+
+            uri = FileProvider.getUriForFile(
+                requireContext(),
+                "${requireContext().packageName}.provider",
+                photoFile
+            )
+
+            cameraLauncher.launch(uri)
         }
     }
 }
