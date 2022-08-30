@@ -176,7 +176,6 @@
                             app:layout_constraintTop_toTopOf="@+id/recipeStepEdit"
                             app:icon="@drawable/ic_delete_like_bin_24dp"
                             style="@style/Widget.Material3.Button.IconButton"
-                            app:backgroundTint="?android:attr/colorButtonNormal"
                             android:layout_gravity="center"
                             android:clipToPadding="false"
                             android:clipChildren="false" />
