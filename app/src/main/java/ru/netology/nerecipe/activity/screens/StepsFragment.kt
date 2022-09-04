@@ -81,7 +81,7 @@ class StepsFragment : Fragment() {
                                 resource: Bitmap,
                                 transition: Transition<in Bitmap?>?
                             ) {
-                                viewModel.setCurrentRecipeImage(resource)
+                                viewModel.setActiveStepImage(resource)
                                 context?.contentResolver?.delete(uri, null, null)
                             }
 
