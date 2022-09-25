@@ -132,7 +132,6 @@ internal class StepsAdapter(
                                 step.id,
                                 s.toString()
                             )
-                        interactionListener.setActiveStep(step, position)
                     }
                 })
 
